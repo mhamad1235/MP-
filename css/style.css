@@ -1,6 +1,6 @@
 /********** Template CSS **********/
 :root {
-    --primary: #009CFF;
+    --primary: #0056A4;
     --secondary: #777777;
     --light: #F8F8F8;
     --dark: #252525;
@@ -67,6 +67,10 @@
 
 
 /*** Navbar ***/
+.navbar{
+
+    background-color:  #0056A4;
+}
 .navbar .dropdown-toggle::after {
     border: none;
     content: "\f107";
@@ -488,4 +492,10 @@
 
 .footer .copyright a:hover {
     color: var(--primary);
+}
+.footer-logo {
+    transition: transform 0.3s ease-in-out;
+}
+.footer-logo:hover {
+    transform: scale(1.05);
 }
