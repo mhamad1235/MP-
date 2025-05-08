@@ -110,3 +110,29 @@
     
 })(jQuery);
 
+document.addEventListener('DOMContentLoaded', function() {
+  const logo = document.getElementById('logo');
+  const mediaQuery = window.matchMedia('(max-width: 991.98px)');
+  let timeoutId = null;
+
+  function handleMediaChange(e) {
+    if (e.matches) {
+      timeoutId = setTimeout(() => {
+        logo.classList.add('hidden');
+        logo.addEventListener('transitionend', () => {
+          logo.style.display = 'none';
+        }, { once: true });
+      }, 2000);
+    } else {
+      if (timeoutId) {
+        clearTimeout(timeoutId);
+        timeoutId = null;
+      }
+      logo.classList.remove('hidden');
+      logo.style.display = '';
+    }
+  }
+
+  handleMediaChange(mediaQuery);
+  mediaQuery.addEventListener('change', handleMediaChange);
+});

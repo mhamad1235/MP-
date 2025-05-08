@@ -99,6 +99,7 @@
 }
 
 @media (max-width: 991.98px) {
+   
     .navbar .navbar-nav .nav-link {
         margin-right: 0;
         padding: 8px 0;
@@ -499,3 +500,12 @@
 .footer-logo:hover {
     transform: scale(1.05);
 }
+#logo {
+    opacity: 1;
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+  
+  #logo.hidden {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
